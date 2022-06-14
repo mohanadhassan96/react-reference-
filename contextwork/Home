@@ -1,0 +1,23 @@
+import React , { useState, useContext } from 'react';
+import { FaBars } from 'react-icons/fa';
+import { useAuth } from './context';
+
+const Home = () => {
+  
+  const  {currentUser}  = useAuth()
+  console.log('current',currentUser)
+  return (
+    <main>
+      <button  className='sidebar-toggle'>
+        <FaBars />
+      </button>
+      <button 
+     // onClick={openModal}
+       className='btn'>
+        show modal{currentUser}
+      </button>
+    </main>
+  );
+};
+
+export default Home;
