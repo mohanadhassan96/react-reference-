@@ -1,0 +1,31 @@
+
+
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { createContext } from "react";
+
+
+const authContext = createContext();
+
+export const useAuth = () => {
+  return useContext(authContext);
+};
+
+const AuthContext = ({ children }) => {
+  const [currentUser, setUser] = useState('mohanad');
+  const [userinfo, setUserinfo] = useState({});
+
+  
+
+
+  const value = {
+   
+    currentUser,
+    
+  };
+  return <authContext.Provider {...{ value }}>{children}</authContext.Provider>;
+};
+
+export default AuthContext;
